@@ -283,29 +283,119 @@
 //     return 0;
 // }
 
-//HW Problem 
-// Inverted Triange Pattern Character
+// HW Problem
+//  Inverted Triange Pattern Character
+//  #include <iostream>
+//  using namespace std;
+
+// int main()
+// {
+//     int n = 4; // number of rows
+//     char ch = 'A';
+//     for (int i = 0; i < n; i++)
+//     {
+//         // Spaces
+//         for (int j = 0; j < i; j++)
+//         {
+//             cout << " ";
+//         }
+//         // Characters
+//         for (int j = 0; j < n - i; j++)
+//         {
+//             cout << ch;
+//         }
+//         cout << endl;
+//         ch++;
+//     }
+//     return 0;
+// }
+
+// Pyramid Pattern
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {                                           // USE OF NESTED LOOPS
+//     int n = 4; // number of rows
+//     for (int i = 0; i < n; i++)
+//     {
+//         // Spaces: n-i-1
+//         for (int j = 0; j < n - i - 1; j++)
+//         {
+//             cout << " ";
+//         }
+
+//         // nums1: i+1
+//         for (int j = 1; j <= i + 1; j++)
+//         {
+//             cout << j;
+//         }
+
+//         // nums2
+//         for (int j = i; j > 0; j--)
+//         {
+//             cout << j;
+//         }
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+// Hollow Pyramid Pattern
 #include <iostream>
 using namespace std;
 
 int main()
-{
+{              // USE OF NESTED LOOPS
     int n = 4; // number of rows
-    char ch = 'A';
+
+    // TOP
     for (int i = 0; i < n; i++)
     {
-        // Spaces
-        for (int j = 0; j < i; j++)
+        // SPACES
+        for (int j = 0; j < n - i - 1; j++)
         {
             cout << " ";
         }
-        // Characters
-        for (int j = 0; j < n - i; j++)
+        cout << "*";
+
+        if (i != 0)
         {
-            cout << ch;
+            // SPACES
+            for (int j = 0; j < 2 * i - 1; j++)
+            {
+                cout << " ";
+            }
+
+            cout << "*";
         }
+
         cout << endl;
-        ch++;
     }
+
+    // BOTTOM PART
+    for (int i = 0; i < n - 1; i++) // 0 to n-2
+    {
+        // SPACES
+        for (int j = 0; j < i + 1; j++)
+        {
+            cout << " ";
+        }
+        cout << "*";
+        if (i != n - 2)
+        {
+            // SPACES
+            for (int j = 0; j < 2 * (n - i) - 5; j++)
+            {
+                cout << " ";
+            }
+            cout << "*";
+        }
+
+        // ITS necessary to end line after every line print
+        cout << endl;
+    }
+
     return 0;
 }
