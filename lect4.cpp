@@ -342,59 +342,120 @@
 //     return 0;
 // }
 
-// Hollow Pyramid Pattern
+// // Hollow Pyramid Pattern
+// #include <iostream>
+// using namespace std;
+
+// int main()
+// {              // USE OF NESTED LOOPS
+//     int n = 4; // number of rows
+
+//     // TOP
+//     for (int i = 0; i < n; i++)
+//     {
+//         // SPACES
+//         for (int j = 0; j < n - i - 1; j++)
+//         {
+//             cout << " ";
+//         }
+//         cout << "*";
+
+//         if (i != 0)
+//         {
+//             // SPACES
+//             for (int j = 0; j < 2 * i - 1; j++)
+//             {
+//                 cout << " ";
+//             }
+
+//             cout << "*";
+//         }
+
+//         cout << endl;
+//     }
+
+//     // BOTTOM PART
+//     for (int i = 0; i < n - 1; i++) // 0 to n-2
+//     {
+//         // SPACES
+//         for (int j = 0; j < i + 1; j++)
+//         {
+//             cout << " ";
+//         }
+//         cout << "*";
+//         if (i != n - 2)
+//         {
+//             // SPACES
+//             for (int j = 0; j < 2 * (n - i) - 5; j++)
+//             {
+//                 cout << " ";
+//             }
+//             cout << "*";
+//         }
+
+//         // ITS necessary to end line after every line print
+//         cout << endl;
+//     }
+
+//     return 0;
+// }
+
+
+//Butterfly Pattern
+// Butterfly Pattern
 #include <iostream>
 using namespace std;
 
 int main()
-{              // USE OF NESTED LOOPS
-    int n = 4; // number of rows
+{
+    int n = 4; // number of rows (you can change this)
 
-    // TOP
-    for (int i = 0; i < n; i++)
+    // TOP HALF
+    for (int i = 1; i <= n; i++)
     {
-        // SPACES
-        for (int j = 0; j < n - i - 1; j++)
+        // LEFT STARS
+        for (int j = 1; j <= i; j++)
         {
-            cout << " ";
-        }
-        cout << "*";
-
-        if (i != 0)
-        {
-            // SPACES
-            for (int j = 0; j < 2 * i - 1; j++)
-            {
-                cout << " ";
-            }
-
             cout << "*";
         }
 
-        cout << endl;
+        // SPACES IN MIDDLE
+        for (int j = 1; j <= 2 * (n - i); j++)
+        {
+            cout << " ";
+        }
+
+        // RIGHT STARS
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+
+        cout << endl; // move to next line
     }
 
-    // BOTTOM PART
-    for (int i = 0; i < n - 1; i++) // 0 to n-2
+    // BOTTOM HALF
+    for (int i = n; i >= 1; i--)
     {
-        // SPACES
-        for (int j = 0; j < i + 1; j++)
+        // LEFT STARS
+        for (int j = 1; j <= i; j++)
         {
-            cout << " ";
-        }
-        cout << "*";
-        if (i != n - 2)
-        {
-            // SPACES
-            for (int j = 0; j < 2 * (n - i) - 5; j++)
-            {
-                cout << " ";
-            }
             cout << "*";
         }
 
-        // ITS necessary to end line after every line print
-        cout << endl;
+        // SPACES IN MIDDLE
+        for (int j = 1; j <= 2 * (n - i); j++)
+        {
+            cout << " ";
+        }
+
+        // RIGHT STARS
+        for (int j = 1; j <= i; j++)
+        {
+            cout << "*";
+        }
+
+        cout << endl; // move to next line
     }
 
     return 0;
