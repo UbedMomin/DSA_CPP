@@ -12,7 +12,7 @@ int printHello()
 
 int main()
 {
-    printHello();
-
+    int val = printHello();
+    cout << "value = " << val << endl;
     return 0;
 }
