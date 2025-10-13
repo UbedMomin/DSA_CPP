@@ -67,32 +67,56 @@
 
 // Calculate nCr binomial coefficient for n & r
 
+// #include <iostream>
+// using namespace std;
+
+// int factorial(int n)
+// {
+//     int fact = 1;
+//     for (int i = 1; i <= n; i++)
+//     {
+//         fact *= i; // Corrected
+//     }
+//     return fact;
+// }
+
+// // binomial coefficient function
+// int nCr(int n, int r)
+// {
+//     int fact_n = factorial(n);
+//     int fact_r = factorial(r);
+//     int fact_nmr = factorial(n - r);
+
+//     return fact_n / (fact_r * fact_nmr);
+// }
+
+// int main()
+// {
+//     int n = 8, r = 2;
+//     cout << nCr(n, r) << endl;
+//     return 0;
+// }
+
+// HW  WAF to check if a number is prime or not
 #include <iostream>
 using namespace std;
 
-int factorial(int n)
+int primeCheck(int n)
 {
-    int fact = 1;
-    for (int i = 1; i <= n; i++)
+    for (int i = 2; i * i <= n; i++)
     {
-        fact *= i;  // Corrected
+        if (n % i == 0)
+        {
+            return 0;
+        }
     }
-    return fact;
-}
-
-// binomial coefficient function
-int nCr(int n, int r)
-{
-    int fact_n = factorial(n);
-    int fact_r = factorial(r);
-    int fact_nmr = factorial(n - r);
-
-    return fact_n / (fact_r * fact_nmr);
+    return 1;
 }
 
 int main()
 {
-    int n = 8, r = 2;
-    cout << nCr(n, r) << endl;
+    int n;
+    cin >> n;
+    cout << primeCheck(n) << endl;
     return 0;
 }
