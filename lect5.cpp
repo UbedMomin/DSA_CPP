@@ -98,25 +98,66 @@
 // }
 
 // HW  WAF to check if a number is prime or not
+// #include <iostream>
+// using namespace std;
+
+// int primeCheck(int n)
+// {
+//     for (int i = 2; i * i <= n; i++)
+//     {
+//         if (n % i == 0)
+//         {
+//             return 0;
+//         }
+//     }
+//     return 1;
+// }
+
+// int main()
+// {
+//     int n;
+//     cin >> n;
+//     cout << primeCheck(n) << endl;
+//     return 0;
+// }
+
+// HW WAF to print all prime numbers from 2 to n
+
+// HW: WAF to print all prime numbers from 2 to n
+
 #include <iostream>
 using namespace std;
 
-int primeCheck(int n)
+// Function to check if a number is prime
+bool primeCheck(int n)
 {
+    if (n < 2)
+        return false;
+
     for (int i = 2; i * i <= n; i++)
     {
         if (n % i == 0)
         {
-            return 0;
+            return false;
         }
     }
-    return 1;
+    return true;
 }
 
 int main()
 {
     int n;
+    cout << "Enter a number: ";
     cin >> n;
-    cout << primeCheck(n) << endl;
+
+    cout << "Prime numbers from 2 to " << n << " are:\n";
+    for (int i = 2; i <= n; i++)
+    {
+        if (primeCheck(i))
+        {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
     return 0;
 }
