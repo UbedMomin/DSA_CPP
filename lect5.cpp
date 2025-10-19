@@ -125,39 +125,70 @@
 
 // HW: WAF to print all prime numbers from 2 to n
 
+// #include <iostream>
+// using namespace std;
+
+// // Function to check if a number is prime
+// bool primeCheck(int n)
+// {
+//     if (n < 2)
+//         return false;
+
+//     for (int i = 2; i * i <= n; i++)
+//     {
+//         if (n % i == 0)
+//         {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+
+// int main()
+// {
+//     int n;
+//     cout << "Enter a number: ";
+//     cin >> n;
+
+//     cout << "Prime numbers from 2 to " << n << " are:\n";
+//     for (int i = 2; i <= n; i++)
+//     {
+//         if (primeCheck(i))
+//         {
+//             cout << i << " ";
+//         }
+//     }
+//     cout << endl;
+//     return 0;
+// }
+
+// WAF to print nth Fibonacci
 #include <iostream>
 using namespace std;
 
-// Function to check if a number is prime
-bool primeCheck(int n)
+// Function to find nth Fibonacci number
+int fibonacci(int n)
 {
-    if (n < 2)
-        return false;
+    if (n <= 1)
+        return n; // Base case
 
-    for (int i = 2; i * i <= n; i++)
+    int a = 0, b = 1, c;
+    for (int i = 2; i <= n; i++)
     {
-        if (n % i == 0)
-        {
-            return false;
-        }
+        c = a + b;
+        a = b;
+        b = c;
     }
-    return true;
+    return b;
 }
 
 int main()
 {
     int n;
-    cout << "Enter a number: ";
+    cout << "Enter n: ";
     cin >> n;
 
-    cout << "Prime numbers from 2 to " << n << " are:\n";
-    for (int i = 2; i <= n; i++)
-    {
-        if (primeCheck(i))
-        {
-            cout << i << " ";
-        }
-    }
-    cout << endl;
+    cout << "The " << n << "th Fibonacci number is: " << fibonacci(n) << endl;
+
     return 0;
 }
