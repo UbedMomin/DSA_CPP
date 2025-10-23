@@ -144,7 +144,7 @@
 // }
 
 
-// HW Reverse an integer
+// HW Reverse an integer of n 
 
 #include <iostream>
 using namespace std;
